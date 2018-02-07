@@ -9,9 +9,6 @@
     "test": "ava --color -v -T 300000",
     "coverage": "nyc --reporter=lcov --reporter=text --reporter-dir ./coverage --clean --cache --instrument ava"
   },
-  "pre-push": [
-    "test"
-  ],
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com:squidit/sq-calculator.git"
