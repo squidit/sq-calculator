@@ -15,12 +15,12 @@ class Calculator {
     this._posts = userPosts
 
     this._likesCount = count(this._posts, 'upvotes')
-    this._likesAverage = average(this._likesCount, this._posts.lenght)
+    this._likesAverage = average(this._likesCount, this._posts.length)
 
     this._commentsCount = count(this._posts, 'comentarios')
-    this._commentsAverage = average(this._commentsCount, this._posts.lenght)
+    this._commentsAverage = average(this._commentsCount, this._posts.length)
 
-    this._engagementRate = engagement(this._likesCount, this._commentsCount, this._posts.lenght, this._followers)
+    this._engagementRate = engagement(this._likesCount, this._commentsCount, this._posts.length, this._followers)
   }
 
   /**
