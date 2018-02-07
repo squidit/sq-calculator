@@ -5,9 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "standard",
-    "lint:fix": "standard --fix",
-    "test": "ava --color -v -T 300000",
-    "coverage": "nyc --reporter=lcov --reporter=text --reporter-dir ./coverage --clean --cache --instrument ava"
+    "lint:fix": "standard --fix"
   },
   "repository": {
     "type": "git",
@@ -20,5 +18,8 @@
   "homepage": "https://github.com/squidit/sq-calculator#README",
   "dependencies": {
     "app-root-dir": "^1.0.2"
+  },
+  "devDependencies": {
+    "standard": "^8.6.0"
   }
 }
