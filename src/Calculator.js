@@ -189,7 +189,7 @@ class Calculator {
    * @public
    * @return {float} Calculo da taxa de engajamento do usuário
    */
-  get engagement () {
+  get engagementRate () {
     return this._engagementRate
   }
 
