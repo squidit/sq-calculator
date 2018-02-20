@@ -2,6 +2,7 @@ const path = require('path')
 const rootPath = require('app-root-dir').get()
 const count = require('./operations/count')
 const average = require('./operations/average')
+const percentage = require('./operations/percentage')
 const engagement = require('./operations/engagement')
 
 class Calculator {
@@ -23,6 +24,8 @@ class Calculator {
 
     this._commentsCount = count(this._posts, 'comentarios')
     this._commentsAverage = average(this._commentsCount, this._posts.length)
+
+    this._reach = parseFloat(percentage(this._followers, 30)).toFixed(2)
 
     this._engagementRate = engagement(this._likesCount, this._commentsCount, this._posts.length, this._followers)
   }
@@ -185,6 +188,26 @@ class Calculator {
    */
   set commentsAverage (commentsAverage) {
     this._commentsAverage = commentsAverage
+  }
+
+  /**
+   * Retorna a taxa de alcance.
+   *
+   * @public
+   * @return {float} taxa de alcance do usuário
+   */
+  get reach () {
+    return this._reach
+  }
+
+  /**
+   * Seta a taxa de alcance.
+   *
+   * @public
+   * @param {float} reach taxa de alcance do usuário
+   */
+  set reach (reach) {
+    this._reach = reach
   }
 
   /**
