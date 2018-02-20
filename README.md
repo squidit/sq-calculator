@@ -19,13 +19,13 @@
 Após a instalação use `require` para trazer o pacote:
 
 ```js
-const Calculator = require('sq-calculator')
+const Calculator = require('sq-calculator').Calculator
 ```
 
 Crie uma nova instancia da classe:
 
 ```js
-const Calculator = require('sq-calculator')
+const Calculator = require('sq-calculator').Calculator
 const calc = new Calculator(posts, followers)
 ```
 
