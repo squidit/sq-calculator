@@ -42,7 +42,7 @@ var followers
 ```
 > O Inteiro de seguidores do usuário
 
-Isso vai liberar 9 propriedades. As propriedades podem ser acessadas da seguinte forma:
+Isso vai liberar 10 propriedades. As propriedades podem ser acessadas da seguinte forma:
 
 > get
   ```js
@@ -77,6 +77,10 @@ Busca ou seta o float da média de likes.
 ### `calc.commentssAverage[get, set]`
 
 Busca ou seta o float da média de comentários.
+
+### `calc.reach[get, set]`
+
+Busca ou seta o float da taxa de alcance do usuário.
 
 ### `calc.engagementRate[get, set]`
 
