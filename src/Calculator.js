@@ -8,6 +8,10 @@ class Calculator {
 
   /**
    * Construtor da classe
+   *
+   * @param {array} userPosts posts do usuário que deve ter pelo menos esse formato:
+   * [{upvotes: 0, comentarios: 0}]
+   * @param {int} userFollowers valor inteiro do número de seguidores do usuário
    */
   constructor (userPosts, userFollowers) {
     this._mountPackageInfo()

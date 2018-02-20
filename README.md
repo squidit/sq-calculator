@@ -34,7 +34,7 @@ Onde:
 ```js
 var posts
 ```
-> Array de posts do usuário
+> Array de posts do usuário que deve estar no seguinte formato: ```js[{upvotes: 0, comentarios: 0}]```
 
 
 ```js
