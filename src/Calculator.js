@@ -25,7 +25,7 @@ class Calculator {
     this._commentsCount = count(this._posts, 'comentarios')
     this._commentsAverage = average(this._commentsCount, this._posts.length)
 
-    this._reach = parseFloat(percentage(this._followers, 30)).toFixed(2)
+    this._reach = percentage(this._followers, 30)
 
     this._engagementRate = engagement(this._likesCount, this._commentsCount, this._posts.length, this._followers)
   }
