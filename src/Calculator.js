@@ -26,8 +26,8 @@ class Calculator {
     this._commentsCount = count(this._posts, 'comentarios')
     this._commentsAverage = average(this._commentsCount, this._posts.length)
 
-    this._impressions = impressions(this._likesCount)
-    this._reach = reach(this._likesCount)
+    this._impressions = impressions(this._likesAverage)
+    this._reach = reach(this._likesAverage)
     this._engagementRate = engagement(this._likesCount, this._commentsCount, this._posts.length, this._followers)
   }
 
