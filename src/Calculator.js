@@ -2,7 +2,8 @@ const path = require('path')
 const rootPath = require('app-root-dir').get()
 const count = require('./operations/count')
 const average = require('./operations/average')
-const percentage = require('./operations/percentage')
+const impressions = require('./operations/impressions')
+const reach = require('./operations/reach')
 const engagement = require('./operations/engagement')
 
 class Calculator {
@@ -10,7 +11,7 @@ class Calculator {
   /**
    * Construtor da classe
    *
-   * @param {array} userPosts posts do usuário que deve ter pelo menos esse formato:
+   * @param {int} userPosts posts do usuário que deve ter esse formato:
    * [{upvotes: 0, comentarios: 0}]
    * @param {int} userFollowers valor inteiro do número de seguidores do usuário
    */
@@ -25,8 +26,8 @@ class Calculator {
     this._commentsCount = count(this._posts, 'comentarios')
     this._commentsAverage = average(this._commentsCount, this._posts.length)
 
-    this._reach = percentage(this._followers, 30)
-
+    this._impressions = impressions(this._likesCount)
+    this._reach = reach(this._likesCount)
     this._engagementRate = engagement(this._likesCount, this._commentsCount, this._posts.length, this._followers)
   }
 
@@ -188,6 +189,26 @@ class Calculator {
    */
   set commentsAverage (commentsAverage) {
     this._commentsAverage = commentsAverage
+  }
+
+  /**
+   * Retorna as impressões médias.
+   *
+   * @public
+   * @return {float} impressões médias
+   */
+  get impressions () {
+    return this._impressions
+  }
+
+  /**
+   * Seta as impressões médias.
+   *
+   * @public
+   * @param {float} impressions impressões médias
+   */
+  set impressions (impressions) {
+    this._impressions = impressions
   }
 
   /**
