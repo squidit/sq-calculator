@@ -14,21 +14,22 @@ class Calculator {
    * @param {int} userPosts posts do usuário que deve ter esse formato:
    * [{upvotes: 0, comentarios: 0}]
    * @param {int} userFollowers valor inteiro do número de seguidores do usuário
+   * @param {int} numPosts número inteiro da quantidade de posts
    */
-  constructor (userPosts, userFollowers) {
+  constructor (userPosts, userFollowers, numPosts) {
     this._mountPackageInfo()
     this._followers = userFollowers
     this._posts = userPosts
 
     this._likesCount = count(this._posts, 'upvotes')
-    this._likesAverage = average(this._likesCount, this._posts.length)
+    this._likesAverage = average(this._likesCount, numPosts || this._posts.length)
 
     this._commentsCount = count(this._posts, 'comentarios')
-    this._commentsAverage = average(this._commentsCount, this._posts.length)
+    this._commentsAverage = average(this._commentsCount, numPosts || this._posts.length)
 
     this._impressions = impressions(this._likesAverage)
     this._reach = reach(this._likesAverage)
-    this._engagementRate = engagement(this._likesCount, this._commentsCount, this._posts.length, this._followers)
+    this._engagementRate = engagement(this._likesCount, this._commentsCount, numPosts || this._posts.length, this._followers)
   }
 
   /**
