@@ -26,7 +26,7 @@ Crie uma nova instancia da classe:
 
 ```js
 const Calculator = require('sq-calculator').Calculator
-const calc = new Calculator(posts, followers)
+const calc = new Calculator(posts, followers, num)
 ```
 
 Onde:
@@ -41,6 +41,11 @@ var posts
 var followers
 ```
 > O Inteiro de seguidores do usuário
+
+```js
+var num
+```
+> O Inteiro do número de posts [opcional]
 
 Isso vai liberar 10 propriedades. As propriedades podem ser acessadas da seguinte forma:
 
