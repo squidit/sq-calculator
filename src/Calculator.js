@@ -20,16 +20,17 @@ class Calculator {
     this._mountPackageInfo()
     this._followers = userFollowers
     this._posts = userPosts
+    this._totalPosts = numPosts || this._posts.length
 
     this._likesCount = count(this._posts, 'upvotes')
-    this._likesAverage = average(this._likesCount, numPosts || this._posts.length)
+    this._likesAverage = average(this._likesCount, this._totalPosts)
 
     this._commentsCount = count(this._posts, 'comentarios')
-    this._commentsAverage = average(this._commentsCount, numPosts || this._posts.length)
+    this._commentsAverage = average(this._commentsCount, this._totalPosts)
 
     this._impressions = impressions(this._likesAverage)
     this._reach = reach(this._likesAverage)
-    this._engagementRate = engagement(this._likesCount, this._commentsCount, numPosts || this._posts.length, this._followers)
+    this._engagementRate = engagement(this._likesCount, this._commentsCount, this._totalPosts, this._followers)
   }
 
   /**
@@ -90,6 +91,26 @@ class Calculator {
    */
   set followers (followers) {
     this._followers = followers
+  }
+
+  /**
+   * Retorna o número total de posts que será usado nos calculos.
+   *
+   * @public
+   * @return {int} Número de posts
+   */
+  get totalPosts () {
+    return this._totalPosts
+  }
+
+  /**
+   * Seta o número de total de posts que será usado nos calculos.
+   *
+   * @public
+   * @param {int} totalPosts número total de posts
+   */
+  set totalPosts (totalPosts) {
+    this._totalPosts = totalPosts
   }
 
   /**

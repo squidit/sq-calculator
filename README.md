@@ -65,6 +65,9 @@ Busca ou seta o array de posts atual.
 ### `calc.followers[get, set]`
 Busca ou seta o intero do número de seguidores.
 
+### `calc.totalPosts[get, set]`
+Busca ou seta o intero do número de posts.
+
 ### `calc.likesCount[get, set]`
 Busca ou seta o intero do número total de likes.
 
